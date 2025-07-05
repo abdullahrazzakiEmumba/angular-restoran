@@ -8,8 +8,19 @@
     --font-poppins: 'Poppins', sans-serif;
     --font-sans:'Poppins', sans-serif;
     --content:66vw;
-    
 }
-.w-content{
+@utility w-content{
     max-width: var(--content);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.rotate-image{
+    animation: rotate 10s linear infinite;
 }

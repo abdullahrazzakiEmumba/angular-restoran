@@ -1,6 +1,6 @@
 <app-hero></app-hero>
 <div class="bg-[#eee] py-[96px]">
-  <div class="w-content mx-auto flex flex-row gap-8">
+  <div class="px-[28px] lg:px-0 lg:w-content mx-auto flex flex-row gap-8 flex-wrap lg:flex-nowrap">
     @for (item of benefits; track item.id) {
     <app-benefit-card [item]="item"></app-benefit-card>
     }
