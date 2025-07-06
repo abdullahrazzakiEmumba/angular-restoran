@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { HeroComponent } from '../hero/hero.component';
 import { BenefitCardComponent } from '../benefit-card/benefit-card.component';
+import { AboutComponent } from '../about/about.component';
 
 @Component({
   selector: 'app-home',
-  imports: [HeroComponent, BenefitCardComponent],
+  imports: [HeroComponent, BenefitCardComponent, AboutComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
