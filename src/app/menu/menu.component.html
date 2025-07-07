@@ -1,0 +1,59 @@
+<div class="py-[96px] bg-white">
+  <div class="lg:w-content px-[28px] mx-auto lg:px-[0px]">
+    <div class="flex flex-col items-center">
+      <div
+        class="flex font-pacifico text-primary text-[20px] justify-center items-center gap-2"
+      >
+        <div class="bg-primary h-[2px] w-[50px]"></div>
+
+        Food Menu
+        <div class="bg-primary h-[2px] w-[50px]"></div>
+      </div>
+
+      <div class="text-[40px] font-bold">Most Popular Items</div>
+      <p-tabs [value]="currentTab">
+        <p-tablist>
+          <p-tab
+            (click)="currentTab = 'breakfast'; updateItems()"
+            value="breakfast"
+            ><div class="flex flex-row items-center gap-4">
+              <svg-icon src="assets/breakfast.svg" />
+              <div class="text-black font-normal">
+                Popular <br /><strong>Breakfast</strong>
+              </div>
+            </div></p-tab
+          >
+          <p-tab (click)="currentTab = 'lunch'; updateItems()" value="lunch"
+            ><div class="flex flex-row items-center gap-4">
+              <svg-icon src="assets/lunch.svg" />
+              <div class="text-black font-normal">
+                Special <br /><strong>Lunch</strong>
+              </div>
+            </div></p-tab
+          >
+          <p-tab (click)="currentTab = 'dinner'; updateItems()" value="dinner"
+            ><div class="flex flex-row items-center gap-4">
+              <svg-icon src="assets/benefit-2.svg" class="text-primary" />
+              <div class="text-black font-normal">
+                Lovely <br /><strong>Dinner</strong>
+              </div>
+            </div></p-tab
+          >
+        </p-tablist>
+      </p-tabs>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full mt-8">
+        @for (item of items; track item.id) {
+        <app-menu-item
+          [name]="item.name"
+          [image]="item.image"
+          [description]="item.description"
+          [price]="item.price"
+        />
+        }
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--  
+          -->

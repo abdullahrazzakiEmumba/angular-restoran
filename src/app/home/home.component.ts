@@ -5,6 +5,7 @@ import { AboutComponent } from '../about/about.component';
 import { ReservationComponent } from '../reservation/reservation.component';
 import { TeamComponent } from '../team/team.component';
 import { TestimonialsComponent } from '../testimonials/testimonials.component';
+import { MenuComponent } from '../menu/menu.component';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,7 @@ import { TestimonialsComponent } from '../testimonials/testimonials.component';
     HeroComponent,
     BenefitCardComponent,
     AboutComponent,
+    MenuComponent,
     ReservationComponent,
     TeamComponent,
     TestimonialsComponent,
