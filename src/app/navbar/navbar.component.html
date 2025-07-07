@@ -9,13 +9,14 @@
         class="text-white uppercase"
         routerLink="/"
         routerLinkActive="!text-primary"
+        [routerLinkActiveOptions]="{ exact: true }"
         >Home</a
       >
       <a
         class="text-white uppercase"
-        href="/#about"
+        routerLink="/contact"
         routerLinkActive="!text-primary"
-        >About</a
+        >Contact</a
       >
       <button class="text-white bg-primary p-4 font-bold" routerLink="/book">
         Book A Table
