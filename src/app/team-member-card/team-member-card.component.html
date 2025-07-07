@@ -1,0 +1,36 @@
+<div class="bg-white w-full p-[21px] group hover:pb-0">
+  <img
+    src="{{ image }}"
+    class="w-full aspect-square object-cover rounded-full"
+  />
+  <div class="text-center text-[20px] font-bold mt-4">{{ name }}</div>
+  <div class="text-center text-[14px]">{{ designation }}</div>
+  <div class="hidden group-hover:block mt-2">
+    <div class="flex items-center justify-center gap-4 mt-2">
+      <a
+        href="{{ fbLink }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-primary py-3 px-3 rounded-tr-full rounded-tl-full"
+      >
+        <svg-icon src="assets/facebook.svg" class="h-[24px]" />
+      </a>
+      <a
+        href="{{ twitterLink }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-primary p-3 rounded-tr-full rounded-tl-full"
+      >
+        <svg-icon src="assets/twitter.svg" class="h-[24px]" />
+      </a>
+      <a
+        href="{{ instaLink }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-primary p-3 rounded-tr-full rounded-tl-full"
+      >
+        <svg-icon src="assets/instagram.svg" class="h-[24px]" />
+      </a>
+    </div>
+  </div>
+</div>
