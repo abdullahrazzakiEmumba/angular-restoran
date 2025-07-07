@@ -1,0 +1,146 @@
+<p-toast />
+<div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-0">
+  <img class="w-full" src="assets/reservation-1.png" />
+  <div class="bg-[#0F172B] flex flex-col items-start justify-center">
+    <div
+      class="flex lg:max-w-[66%] flex-col items-start justify-center gap-2 px-[28px] py-[40px]"
+    >
+      <div
+        class="font-pacifico text-primary text-[20px] flex items-center gap-2"
+      >
+        Reservation
+        <div class="bg-primary h-[2px] w-[50px]"></div>
+      </div>
+      <div class="text-white text-[40px] font-bold">Book A Table Online</div>
+      <form
+        [formGroup]="reservationForm"
+        class="w-full mt-4"
+        (ngSubmit)="onSubmit()"
+      >
+        <div class="flex flex-col gap-4">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-4 w-full">
+            <div>
+              <p-floatlabel variant="in">
+                <input
+                  pInputText
+                  id="name"
+                  formControlName="name"
+                  required
+                  autocomplete="off"
+                />
+                <label for="email">Your Name</label>
+              </p-floatlabel>
+              @if (reservationForm.controls.name.touched) { @if
+              (reservationForm.controls.name.hasError('required')) {
+              <small class="text-red-500">Name is required</small>
+              } @else if (reservationForm.controls.name.hasError('minlength')&&
+              reservationForm.controls.name.touched ){
+              <small class="text-red-500"
+                >Name should be atleast
+                {{
+                  reservationForm.controls.name.errors!["minlength"]!
+                    .requiredlength
+                }}
+                letters</small
+              >
+              }@else if (reservationForm.controls.name.hasError('maxlength')) {
+              <small class="text-red-500"
+                >Name can be at most
+                {{
+                    reservationForm.controls.name.errors?.["maxlength"]
+                      ?.requiredlength
+                }}
+                characters</small
+              >
+              }@else if (reservationForm.controls.name.hasError('pattern')) {
+              <small class="text-red-500"
+                >Name can only contain alphabets, spaces and hyphen</small
+              >
+              } }
+            </div>
+            <div>
+              <p-floatlabel variant="in">
+                <input
+                  pInputText
+                  id="email"
+                  formControlName="email"
+                  required
+                  type="email"
+                  autocomplete="off"
+                />
+                <label for="email">Your email</label>
+              </p-floatlabel>
+              @if (reservationForm.controls.email.touched) { @if
+              (reservationForm.controls.email.hasError('required')) {
+              <small class="text-red-500">Email is required</small>
+              } @else if (reservationForm.controls.email.hasError('email')) {
+              <small class="text-red-500">Invalid email</small>
+              } }
+            </div>
+
+            <div>
+              <p-floatlabel class="w-full" variant="in">
+                <p-datepicker
+                  formControlName="date"
+                  [showIcon]="false"
+                  dateFormat="dd/mm/yy"
+                  [showTime]="true"
+                  hourFormat="12"
+                  [showOnFocus]="true"
+                  inputStyleClass="bg-white text-black py-2 min-h-[56px] rounded-none"
+                  [minDate]="minDate"
+                  inputId="date"
+                />
+                <label for="date">Date and Time</label>
+              </p-floatlabel>
+              @if (reservationForm.controls.date.touched &&
+              reservationForm.controls.date.hasError('required')) {
+              <small class="text-red-500">Date and Time is required</small>
+              }
+            </div>
+            <div>
+              <p-floatlabel class="w-full" variant="in">
+                <p-select
+                  formControlName="noOfPeople"
+                  inputId="noOfPeople"
+                  [options]="noOfPeopleOptions"
+                  styleClass="w-full"
+                />
+                <label for="noOfPeople">No of People</label>
+              </p-floatlabel>
+              @if (reservationForm.controls.noOfPeople.touched &&
+              reservationForm.controls.noOfPeople.hasError('required')) {
+              <small class="text-red-500">No of People is required</small>
+              }
+            </div>
+          </div>
+          <div>
+            <p-floatlabel variant="in">
+              <textarea
+                pTextarea
+                id="instructions"
+                class="bg-white text-black w-full h-full"
+                formControlName="instructions"
+                rows="4"
+              ></textarea>
+              <label for="instructions">Special Request</label>
+            </p-floatlabel>
+            @if (reservationForm.controls.instructions.touched &&
+            reservationForm.controls.instructions.hasError('maxlength')) {
+            <small class="text-red-500"
+              >Special Reqest can have maximum 250 characters</small
+            >
+            }
+          </div>
+
+          <button
+            type="submit"
+            class="bg-primary text-white px-8 py-3 font-semibold mt-4"
+          >
+            Book Now
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

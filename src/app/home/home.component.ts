@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { HeroComponent } from '../hero/hero.component';
 import { BenefitCardComponent } from '../benefit-card/benefit-card.component';
 import { AboutComponent } from '../about/about.component';
+import { ReservationComponent } from '../reservation/reservation.component';
 
 @Component({
   selector: 'app-home',
-  imports: [HeroComponent, BenefitCardComponent, AboutComponent],
+  imports: [HeroComponent, BenefitCardComponent, AboutComponent, ReservationComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
