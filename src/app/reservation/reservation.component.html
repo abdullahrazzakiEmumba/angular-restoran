@@ -3,7 +3,7 @@
   <img class="w-full" src="assets/reservation-1.png" />
   <div class="bg-[#0F172B] flex flex-col items-start justify-center">
     <div
-      class="flex lg:max-w-[66%] flex-col items-start justify-center gap-2 px-[28px] py-[40px]"
+      class="flex w-full lg:max-w-[66%] flex-col items-start justify-center gap-2 px-[28px] py-[40px]"
     >
       <div
         class="font-pacifico text-primary text-[20px] flex items-center gap-2"
@@ -27,6 +27,7 @@
                   formControlName="name"
                   required
                   autocomplete="off"
+                  class="w-full"
                 />
                 <label for="email">Your Name</label>
               </p-floatlabel>
@@ -67,6 +68,7 @@
                   required
                   type="email"
                   autocomplete="off"
+                  class="w-full"
                 />
                 <label for="email">Your email</label>
               </p-floatlabel>
@@ -87,9 +89,10 @@
                   [showTime]="true"
                   hourFormat="12"
                   [showOnFocus]="true"
-                  inputStyleClass="bg-white text-black py-2 min-h-[56px] rounded-none"
+                  inputStyleClass="w-full bg-white text-black py-2 min-h-[56px] rounded-none"
                   [minDate]="minDate"
                   inputId="date"
+                  styleClass="w-full"
                 />
                 <label for="date">Date and Time</label>
               </p-floatlabel>
