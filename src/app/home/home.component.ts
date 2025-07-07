@@ -4,6 +4,7 @@ import { BenefitCardComponent } from '../benefit-card/benefit-card.component';
 import { AboutComponent } from '../about/about.component';
 import { ReservationComponent } from '../reservation/reservation.component';
 import { TeamComponent } from '../team/team.component';
+import { TestimonialsComponent } from '../testimonials/testimonials.component';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,7 @@ import { TeamComponent } from '../team/team.component';
     AboutComponent,
     ReservationComponent,
     TeamComponent,
+    TestimonialsComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
